@@ -8,15 +8,23 @@ Upon further research, I found that actual gimbals use brushless DC motors, (BLD
 
 ### Who is This Reading For?
 
-This `README.md` document will serve to document my journey and design process as someone, who quite frankly, has no idea what they are doing. Perhaps this is missuse of what Github is intended for, but I just needed somewhere on the the cloud to document my workflow. The rest of this document will read as a blog or instructable, and can be read top down. I intend that anyone who reads this document, (once completed,) will be able to create their own BLDC motor driver, while gaining insight into my learning process along the way.
+This `README.md` document will serve to document my journey and design process as someone, who quite frankly, has no idea what they are doing. Perhaps this is missuse of what Github is intended for, but I just needed somewhere on the the cloud to document my workflow. The rest of this document will read as a blog or instructable, and can be read top down. I intend that anyone who reads this document, (once completed,) will be able to create their own BLDC motor driver, while gaining insight into my learning process along the way. I intend that the only prerequisite knowledge required to understand this document is a basic circuits course, and thus will keep the language as simple as possible. I have created a [glossary](#Glosary) of technical terms to aid the reader in comprehension.
 
 ## High-Level Understanding
+
+### How do Brushless DC Motors Work?
 
 ### What is Field Oriented Control?
 
 Field oriented control (FOC), also known as vector control, is a method of controlling 3-phase motors such as BLDCs by decoupling and independently controlling the torque and flux. As the term vector control suggests, this is done by transforming the three phase currents into two orthagonal vectors. This is accomplished the Clarke and Park transformations, producing the vectors I<sub>d</sub>, which control the flux, and I<sub>q</sub>, which controls the torque.
 
-If the goal of this project is to achieve precise position control, it may not be immediately evident why FOC is necessary. 
+If the goal of this project is to achieve precise position control, it may not be immediately evident why FOC is necessary. You could use a motor encoder then send currents into the three phases accordingly using other commutation methods. Indeed, FOC *is not* strictly required for position control of a motor but offers many benefits, especially for applications in gimbals.
+
+Benefits of field oriented control:
+
+* __Power Efficiency:__
+* __Smooth Operation:__
+* __Torque Control:__
 
 ### Block Diagram
 
@@ -30,7 +38,7 @@ If the goal of this project is to achieve precise position control, it may not b
 | MCU | Arduino Nano |
 | BLDC | TBD |
 | Power Supply | TBD |
-| Current Sensors | TBD |
+| Current Sensor | INA3221 |
 
 ### Additional Components
 
@@ -48,3 +56,5 @@ If the goal of this project is to achieve precise position control, it may not b
 ## Mechanical Considerations
 
 ## Second Design: Custom PCB
+
+## Glossary
