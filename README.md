@@ -2,9 +2,9 @@
 
 ## Introduction
 
-At the beginning of November, I wanted to create a camera gimbal as a side project. It seemed simple enough; I just needed a servo motor and a gyroscope to command it, and the rest would fall into place. There are plenty of camera gimbal Arduino projects online that are easy to follow, but I wanted this project to be boostrap. Additionally, the Arduino projects I saw had some major shortcoming that were unacceptable to me. Surprisngly, the biggest shortcoming is functionality as an actual gimbal! The hobby servos used in these sorts of projects do not provide a smooth enough rotation.
+At the beginning of November, I wanted to create a camera gimbal as a side project. It seemed simple enough; I just needed some servo motors and a gyroscope, and I figured the rest would fall into place. I came across plenty of camera gimbal Arduino projects online, but I wanted the project to be boostrap. Additionally, the Arduino projects I saw had some major shortcoming that were unacceptable to me. Surprisngly, the biggest shortcoming is functionality as an actual gimbal! The hobby servos used in these sorts of projects do not provide a smooth enough rotation for practical purposes.
 
-Upon further research, I found that actual gimbals use brushless DC motors, (BLDCs), because of its smoother control, quiet operation, and power efficiency. But this discovery led me down a massive rabbit hole as I asked myself: "How am I going to control the motor?" Turns out that there are plenty of BLDC motor drivers on the market, including the [Tinymovr,](https://tinymovr.com/en-us) or the [Odrive,](https://odriverobotics.com/?srsltid=AfmBOornOrGTfZCiD05f8jtOMgs2SLPtsRMCaBWyb3TLv5Ix27u7qMqg) but where is the learning in that? As a mechatronics engineering student, I knew I wanted to move away from mechanical work so this project was the perfect opportunity to develop my electrical and embedded skills at the lowest level possible. After some additional digging, I focused my scope in on developing my own field oriented controller to precisely control a brushless DC motor.
+Upon further research, I found that *actual* gimbals use brushless DC motors, (BLDCs), because of their smoother control, quiet operation, and power efficiency. This discovery led me down a massive rabbit hole as I asked myself: "How am I going to control the motor?" Turns out that there are plenty of BLDC motor drivers on the market, including the [Tinymovr,](https://tinymovr.com/en-us) or the [Odrive,](https://odriverobotics.com/?srsltid=AfmBOornOrGTfZCiD05f8jtOMgs2SLPtsRMCaBWyb3TLv5Ix27u7qMqg) but where is the learning in that? As a mechatronics engineering student, I knew I wanted to move away from mechanical work so this project was the perfect opportunity to develop my electrical and embedded skills at a low level. After some additional thinking, I focused my scope in on developing my own field oriented controller to precisely control a brushless DC motor. 
 
 ### Who is This Reading For?
 
@@ -20,17 +20,21 @@ Field oriented control (FOC), also known as vector control, is a method of contr
 
 If the goal of this project is to achieve precise position control, it may not be immediately evident why FOC is necessary. You could use a motor encoder then send currents into the three phases accordingly using other commutation methods. Indeed, FOC *is not* strictly required for position control of a motor but offers many benefits, especially for applications in gimbals.
 
-Benefits of field oriented control:
+The simplest method of commutation is trapezoidal.
 
-* __Power Efficiency:__
-* __Smooth Operation:__
-* __Torque Control:__
+In contrast, FOC eliminates these issues:
+
+* __Power Efficiency:__ 
+* __Smooth Operation:__ FOC 
+* __Torque Control:__ FOC provides precise torque control, which is critical for dynamic loads such as those experienced in a camera gimbal.
 
 ### Block Diagram
 
 ![Block diagram of motor controller](Images/block-diagram.svg)
 
-## Component Selection
+## Circuit Design
+
+### Component Selection
 
 | Description | PN |
 | --- | --- |
@@ -40,20 +44,18 @@ Benefits of field oriented control:
 | Power Supply | TBD |
 | Current Sensor | INA3221 |
 
-### Additional Components
-
 * Resistors as required
 * Capacitors as required
 
-## PI Controls
+### Schematic
 
 ## Software
+
+### PI Controls
 
 ### I2C
 
 ## First Design
-
-## Mechanical Considerations
 
 ## Second Design: Custom PCB
 
