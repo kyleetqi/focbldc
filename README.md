@@ -8,7 +8,7 @@ Upon further research, I found that actual gimbals use brushless DC motors, (BLD
 
 ### Who is This Reading For?
 
-This `README.md` document will serve to document my journey and design process as someone, who quite frankly, has no idea what they are doing. Perhaps this is missuse of what Github is intended for, but I just needed somewhere on the the cloud to document my workflow. The rest of this document will read as a blog or instructable, and can be read top down. I intend that anyone who reads this document, (once completed,) will be able to create their own BLDC motor driver, while gaining insight into my learning process along the way. I intend that the only prerequisite knowledge required to understand this document is a basic circuits course, and thus will keep the language as simple as possible. I have created a [glossary](#Glosary) of technical terms to aid the reader in comprehension.
+This `README.md` document will serve to document my journey and design process as someone, who quite frankly, has no idea what they are doing. Perhaps this is missuse of what Github is intended for, but I just needed somewhere on the the cloud to document my workflow. The rest of this document will read as a blog or instructable, and can be read top down. I intend that anyone who reads this document, (once completed,) will be able to create their own BLDC motor driver, while gaining insight into my learning process along the way. I intend that the only prerequisite knowledge required to understand this document is a basic circuits course, and thus will keep the language as simple as possible. I have created a [glossary](#Glossary) of technical terms to aid the reader in comprehension.
 
 ## High-Level Understanding
 
