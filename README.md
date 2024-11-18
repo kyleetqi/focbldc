@@ -60,3 +60,13 @@ In contrast, FOC eliminates these issues:
 ## Second Design: Custom PCB
 
 ## Glossary
+
+| Term | Description |
+| --- | --- |
+| Commutation | TBD |
+| Trapezoidal Commutation | TBD |
+| Field Oriented Control (FOC) | TBD |
+| Brushless DC Motor (BLDC) | TBD |
+| Park Transform | TBD |
+| Clarke Transform | TBD |
+
