@@ -6,7 +6,7 @@
 
 ### Block Diagram
 
-![Block diagram of motor controller](images/block-diagram.svg)
+![Block diagram of motor controller](Images/block-diagram.svg)
 
 
 
