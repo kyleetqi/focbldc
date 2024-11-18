@@ -2,7 +2,13 @@
 
 ## Introduction
 
-## Block Diagram
+## High Level Understanding
+
+### Block Diagram
+
+![Block diagram of motor controller](images/block-diagram.svg)
+
+
 
 ## Component Selection
 
