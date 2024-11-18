@@ -43,9 +43,13 @@ In contrast, FOC eliminates these issues:
 | BLDC | TBD |
 | Power Supply | TBD |
 | Current Sensor | INA3221 |
+| 3-Phase Inverter | TBD |
 
 * Resistors as required
 * Capacitors as required
+
+There are ICs that combine 3-phase inverters and current sensors into one package but I decided to use separate components for now.
+The first design will use breakout boards.
 
 ### Schematic
 
