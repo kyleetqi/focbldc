@@ -32,9 +32,9 @@ In contrast, FOC eliminates these issues:
 
 ![Block diagram of motor controller](Images/block-diagram.svg)
 
-## Circuit Design
+## Component Selection
 
-### Component Selection
+After doing some research, 
 
 | Description | PN |
 | --- | --- |
@@ -48,18 +48,21 @@ In contrast, FOC eliminates these issues:
 * Resistors as required
 * Capacitors as required
 
-Some ICs combine 3-phase inverters and current sensors into one package but I decided to use separate components for now.
+Some 3-phase inverter ICs are specifically made for BLDC operation, and include current sensors in their package. However, for the sake of learning, I will use separate current sensors and inverters for the first iteration of the design.
+
+## First Design
+
 The first design will use breakout boards.
 
 ### Schematic
 
 ## Software
 
+
+
 ### PI Controls
 
 ### I2C
-
-## First Design
 
 ## Second Design: Custom PCB
 
