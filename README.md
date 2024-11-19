@@ -25,7 +25,7 @@ If this project aims to achieve precise position control, it may not be immediat
 
 # First Design
 
-For the first iteration of the design, I thought it would be wise to use breakout boards to prove to myself that I can get this to work else I design an overpriced PCB that does not even work.
+For the first iteration of the design, I thought it would be wise to use breakout boards to prove to myself that I can get this to work else I design an overpriced, non-functional PCB.
 
 ## Component Selection
 
