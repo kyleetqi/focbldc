@@ -20,8 +20,6 @@ Field-oriented control (FOC), also known as vector control, is a method of contr
 
 If this project aims to achieve precise position control, it may not be immediately evident why FOC is necessary. You could use a motor encoder and then send currents into the three phases accordingly using other commutation methods. Indeed, FOC *is not* strictly required for position control of a motor but offers many benefits, especially for applications in gimbals. FOC provides better power efficiency, torque characteristics, and smoother commutation.
 
-
-
 ### Block Diagram
 
 ![Block diagram of motor controller](Images/block-diagram.svg)
@@ -29,7 +27,7 @@ If this project aims to achieve precise position control, it may not be immediat
 
 ## Component Selection
 
-After doing some research, 
+After doing some research, I settled on the following components:
 
 | Description | PN |
 | --- | --- |
@@ -47,7 +45,7 @@ Some 3-phase inverter ICs are specifically made for BLDC operation, and include 
 
 ## First Design
 
-The first design will use breakout boards.
+For the first iteration of the design, I thought it would be wise to use breakout boards to prove to myself that I can get this to work else I design an overpriced PCB that does not even work.
 
 ### Schematic
 
