@@ -33,12 +33,13 @@ Since I wanted to use breakout boards, I needed common ICs. After doing some res
 
 | Description | PN |
 | --- | --- |
-| Magnetic Encoder | AS5600 |
+| Magnetic Encoder | [AS5600](https://www.amazon.com/Magnetic-Encoder-Induction-Measurement-Precision/dp/B094F8H591?th=1) |
 | MCU | Arduino Nano |
 | BLDC | TBD |
 | Power Supply | TBD |
-| Current Sensor | INA3221 |
-| 3-Phase Inverter | TMC6300 |
+| Current Sensor | [INA3221](https://www.amazon.com/DAOKAI-INA3221-Channel-Current-Replacement/dp/B0B5D3PVFR/ref=sr_1_2?crid=KPTQXU6AVIML&dib=eyJ2IjoiMSJ9.ROfuRmnt7fyonseZ5LHUXL2l47dBgxdrTOMYApPNdhPdyjwZEU6cm2AWRfzulQoaKRz_KolXH0dgz6UZqttZ7wL75fTOVbobFJQuQjU_TnWBuNShv56PupeN65hO1czEBZp7WDB4j-woHkOQKQtNwc8NBXwqaWbqXfgtErMfGvOoqAifkzuwKvcBpvwJ7_cXCyxPZUcKcO0OYuHajSs0lCFSzxuGfggV1VItRCouimY.7OSrFlWi814gCHG7CSV7sCe8t8Lu424Qw6H9MTYB_6o&dib_tag=se&keywords=INA3221&qid=1731987102&sprefix=ina3221%2Caps%2C105&sr=8-2#customerReviews) |
+| 3-Phase Inverter | [TMC6300](https://www.amazon.com/SparkFun-Brushless-Motor-Driver-Dimensions/dp/B0C9PJWGW4) |
+
 
 Some 3-phase inverter ICs are specifically made for BLDC operation, and include current sensors in their package. However, for the sake of learning, I decided on separate current sensors and inverters. 
 
@@ -63,7 +64,6 @@ The following resources were extremely helpful in the process of designing my fi
 | Term | Description |
 | --- | --- |
 | Commutation | TBD |
-| Trapezoidal Commutation | TBD |
 | Field Oriented Control (FOC) | TBD |
 | Brushless DC Motor (BLDC) | TBD |
 | Park Transform | TBD |
