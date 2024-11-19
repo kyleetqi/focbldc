@@ -25,9 +25,11 @@ If this project aims to achieve precise position control, it may not be immediat
 
 # First Design
 
+For the first iteration of the design, I thought it would be wise to use breakout boards to prove to myself that I can get this to work else I design an overpriced PCB that does not even work.
+
 ## Component Selection
 
-After doing some research, I settled on the following components:
+Since I wanted to use breakout boards, I needed common ICs. After doing some research, I settled on the following components:
 
 | Description | PN |
 | --- | --- |
@@ -36,15 +38,9 @@ After doing some research, I settled on the following components:
 | BLDC | TBD |
 | Power Supply | TBD |
 | Current Sensor | INA3221 |
-| 3-Phase Inverter | TBD |
+| 3-Phase Inverter | TMC6300 |
 
-* Resistors as required
-* Capacitors as required
-
-Some 3-phase inverter ICs are specifically made for BLDC operation, and include current sensors in their package. However, for the sake of learning, I will use separate current sensors and inverters for the first iteration of the design.
-
-
-For the first iteration of the design, I thought it would be wise to use breakout boards to prove to myself that I can get this to work else I design an overpriced PCB that does not even work.
+Some 3-phase inverter ICs are specifically made for BLDC operation, and include current sensors in their package. However, for the sake of learning, I decided on separate current sensors and inverters. 
 
 ## Schematic
 
@@ -59,6 +55,8 @@ For the first iteration of the design, I thought it would be wise to use breakou
 # Further Reading
 
 The following resources were extremely helpful in the process of designing my field-oriented controller.
+
+[Brushless Motor Control with Simulink](https://www.youtube.com/playlist?list=PLn8PRpmsu08qL-EG3DRMtRyokpXQJyhp7)
 
 # Glossary
 
