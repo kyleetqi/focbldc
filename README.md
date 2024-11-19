@@ -50,7 +50,7 @@ Some 3-phase inverter ICs are specifically made for BLDC operation, and include 
 
 ## PI Controls
 
-# Second Design: Custom PCB
+# Second Design
 
 # Further Reading
 
