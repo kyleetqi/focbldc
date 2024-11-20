@@ -29,10 +29,10 @@ For the first iteration of the design, I thought it would be wise to use breakou
 
 ## Component Selection
 
-*Since I wanted to use breakout boards, I needed widely available ICs. 
-*Since the first design is a proof-of-concept, I chose a small hobby gimbal motor so I did not have to worry about making sure my components were rated for high power. 
-*Some 3-phase inverter ICs are specifically made for BLDC operation, and include current sensors in their package. However, for the sake of learning, I decided on separate current sensors and inverters. 
-*For the MCU, I initially wanted to choose an Arduino Nano for its form factor. However, it only has 6 PWM channels, which is only enough to control the three phase inverter. If I wanted PWM anywhere else, it would not be sufficient. Because of this, I decided to use the DEVKIT ESP32 development board which has 16 PWM channels.
+* Since I wanted to use breakout boards, I needed widely available ICs. 
+* Since the first design is a proof-of-concept, I chose a small hobby gimbal motor so I did not have to worry about making sure my components were rated for high power. 
+* Some 3-phase inverter ICs are specifically made for BLDC operation, and include current sensors in their package. However, for the sake of learning, I decided on separate current sensors and inverters. 
+* For the MCU, I initially wanted to choose an Arduino Nano for its form factor. However, it only has 6 PWM channels, which is only enough to control the three phase inverter. If I wanted PWM anywhere else, it would not be sufficient. Because of this, I decided to use the DEVKIT ESP32 development board which has 16 PWM channels.
 
 | Description | PN |
 | --- | --- |
