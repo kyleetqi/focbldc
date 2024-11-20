@@ -32,12 +32,12 @@ For the first iteration of the design, I thought it would be wise to use breakou
 * Since I wanted to use breakout boards, I needed widely available ICs. 
 * Since the first design is a proof-of-concept, I chose a small hobby gimbal motor so I did not have to worry about making sure my components were rated for high power. 
 * Some 3-phase inverter ICs are specifically made for BLDC operation, and include current sensors in their package. However, for the sake of learning, I decided on separate current sensors and inverters. 
-* For the MCU, I initially wanted to choose an Arduino Nano for its form factor. However, it only has 6 PWM channels, which is only enough to control the three phase inverter. If I wanted PWM anywhere else, it would not be sufficient. Because of this, I decided to use the DEVKIT ESP32 development board which has 16 PWM channels.
+* For the MCU, I initially wanted to choose an Arduino Nano for its form factor. However, it only has 6 PWM channels, which is only enough to control the three phase inverter. If I wanted PWM anywhere else, it would not be sufficient. Because of this, I decided to use the Teensy 4.0 which has a whopping 31 PWM channels.
 
 | Description | PN |
 | --- | --- |
 | Magnetic Encoder | [AS5600](https://www.amazon.com/Magnetic-Encoder-Induction-Measurement-Precision/dp/B094F8H591?th=1) |
-| MCU | ESP32 |
+| MCU | Teensy 4.1 |
 | BLDC | TBD |
 | Power Supply | TBD |
 | Current Sensor | [INA3221](https://www.amazon.com/DAOKAI-INA3221-Channel-Current-Replacement/dp/B0B5D3PVFR/ref=sr_1_2?crid=KPTQXU6AVIML&dib=eyJ2IjoiMSJ9.ROfuRmnt7fyonseZ5LHUXL2l47dBgxdrTOMYApPNdhPdyjwZEU6cm2AWRfzulQoaKRz_KolXH0dgz6UZqttZ7wL75fTOVbobFJQuQjU_TnWBuNShv56PupeN65hO1czEBZp7WDB4j-woHkOQKQtNwc8NBXwqaWbqXfgtErMfGvOoqAifkzuwKvcBpvwJ7_cXCyxPZUcKcO0OYuHajSs0lCFSzxuGfggV1VItRCouimY.7OSrFlWi814gCHG7CSV7sCe8t8Lu424Qw6H9MTYB_6o&dib_tag=se&keywords=INA3221&qid=1731987102&sprefix=ina3221%2Caps%2C105&sr=8-2#customerReviews) |
