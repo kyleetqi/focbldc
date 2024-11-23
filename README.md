@@ -8,13 +8,33 @@ Upon further research, I found that *actual* gimbals use brushless DC motors, (B
 
 This `README.md` document will serve to document my journey and design process as someone, who quite frankly, has no idea what they are doing. Perhaps this is a misuse of what Github is intended for, but I just needed somewhere on the cloud to document my workflow. The rest of this document will read as a blog or instructable and can be read top down. I intend that anyone who reads this document, (once completed,) will be able to create their own BLDC motor driver while gaining insight into my learning process along the way. I intend that the only prerequisite knowledge required to understand this document is a basic circuits course, and thus will keep the language as simple as possible. I have created a [glossary](#Glossary) of technical terms to aid the reader in comprehension.
 
+Please note that until this document is finished, there may be substantial grammatical errors or gaps in writing. 
+
 # High-Level Understanding
 
 ## How do Brushless DC Motors Work?
 
+Brushless DC motors (BLDCs) are a type of motor that commutate without brushes. That statement is so obvious that it is unhelpful, so let me start by explaining how *brushed* DC motors work.
+
+![GIF of a Brushed DC motor's operating principle.](https://upload.wikimedia.org/wikipedia/commons/7/73/Ejs_Open_Source_Direct_Current_Electrical_Motor_Model_Java_Applet_%28_DC_Motor_%29_80_degree_split_ring.gif)
+
+*Brushed DC Motor Operating Principle.* [*Source.*](https://commons.wikimedia.org/wiki/File:Ejs_Open_Source_Direct_Current_Electrical_Motor_Model_Java_Applet_(_DC_Motor_)_80_degree_split_ring.gif)
+
+In the image above, the two magnet poles form the stator. The object spinning in the center is called the rotor. The two black boxes on the sides of the rotor's rotating cyan ring represent the stationary brushes, which carry current from the power source into the rotor. As current passes through the rotor's conductor, a magnetic field is generated which interacts with the magnetic field from the stator, driving rotation and producing torque. The issue with this design is that the brushes wear down over time and require maintenance or replacement.
+
+With that context in mind, BLDCs operate *without* brushes. The design of a typical BLDC is the opposite of a brushed DC motor. The rotor is the permanent magnet, while the stator consists of powered coils. 
+
+![GIF of a Brushless DC motor's operating principle.](https://www.renesas.com/sites/default/files/inline-images/fig3-a-bldc-monitor-en.gif)
+
+*Brushless DC Motor Operating Principle.* [*Source.*](https://www.renesas.com/en/support/engineer-school/brushless-dc-motor-01-overview)
+
+In a BLDC, currents are sent into the coils in a specific pattern, (depending on the commutation method,) such that the magnetic field in the rotor is always chasing the stators' fields.
+
+
+
 ## What is Field Oriented Control?
 
-Field-oriented control (FOC), also known as vector control, is a method of controlling 3-phase motors such as BLDCs by decoupling and independently controlling the torque and flux. As the term vector control suggests, this is done by transforming the three-phase currents into two orthogonal vectors. This is accomplished by the Clarke and Park transformations, producing the vectors I<sub>d</sub>, which control the flux, and I<sub>q</sub>, which controls the torque.
+Field-oriented control (FOC), also known as vector control, is a method of controlling 3-phase motors such as BLDCs by decoupling and independently controlling the torque and flux. This is done by visualizing the currents as two orthogonal vectors: I<sub>d</sub>, controls the flux, and I<sub>q</sub>, controls the torque. These two vectors are created by applying the Clarke and Park transformations to the three-phase currents. 
 
 If this project aims to achieve precise position control, it may not be immediately evident why FOC is necessary. You could use a motor encoder and then send currents into the three phases accordingly using other commutation methods. Indeed, FOC *is not* strictly required for position control of a motor but offers many benefits, especially for applications in gimbals. FOC provides better power efficiency, torque characteristics, and smoother commutation.
 
