@@ -44,9 +44,11 @@ If this project aims to achieve precise position control, it may not be immediat
 
 ## Quadrature and Direct Current
 
-## The Park/Clarke Transform
+## The Park and Clarke Transforms
 
 ## Space Vector Pulse Width Modulation
+
+After producing the command voltages, we still need a method of using that to drive the motor. This is accomplished using Space Vector Pulse Width Modulation (SVPWM.)
 
 ## Cascading Control Loops
 
