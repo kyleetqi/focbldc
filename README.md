@@ -2,7 +2,7 @@
 
 At the beginning of November, I wanted to create a camera gimbal. It seemed simple enough. I just needed some servo motors and a gyroscope, and I figured the rest would fall into place. I encountered plenty of camera gimbal Arduino projects online, but they all had some unacceptable shortcomings. Surprisingly, the biggest shortcoming is functionality as an actual gimbal! The hobby servos used in these types of projects do not provide a smooth enough rotation for practical purposes.
 
-Upon further research, I found that *actual* gimbals use brushless DC motors, (BLDCs), because of their smoother control, quiet operation, and power efficiency. This discovery led me down a massive rabbit hole as I asked myself: "How am I going to control the motor?" Turns out that there are plenty of BLDC motor drivers on the market, including the [Tinymovr,](https://tinymovr.com/en-us) or the [Odrive,](https://odriverobotics.com/?srsltid=AfmBOornOrGTfZCiD05f8jtOMgs2SLPtsRMCaBWyb3TLv5Ix27u7qMqg) but using a pre-configured controller felt like "cheating" to me. As a mechatronics engineering student, I knew I wanted to explore the realm of embedded systems so this project was the perfect opportunity to bootstrap something low-level. After some additional ideation, I focused my scope on developing my own field-oriented controller to precisely control the position of a brushless DC motor. 
+Upon further research, I found that *actual* gimbals use brushless DC motors, (BLDCs), because of their smoother control, quiet operation, and power efficiency. This discovery led me down a massive rabbit hole as I asked myself: "How am I going to control the motor?" Turns out that there are plenty of BLDC motor drivers on the market, including the [Tinymovr,](https://tinymovr.com/en-us) or the [Odrive,](https://odriverobotics.com/?srsltid=AfmBOornOrGTfZCiD05f8jtOMgs2SLPtsRMCaBWyb3TLv5Ix27u7qMqg) but using a pre-configured controller felt like "cheating" to me. As a mechatronics engineering student, I knew I wanted to explore the realm of embedded systems so this project was the perfect opportunity to bootstrap something low-level. After some additional ideation, I focused my scope on developing my own field-oriented controller (FOC) to precisely control the position of a brushless DC motor. 
 
 ## Who is This Reading For?
 
@@ -11,6 +11,8 @@ This `README.md` document will serve to document my journey and design process a
 Please note that until this document is finished, there may be substantial grammatical errors or gaps in writing. 
 
 # High-Level Understanding
+
+I spent an ungodly amount of time researching how FOCs work to distill it down into this concise writing.
 
 ## How do Brushless DC Motors Work?
 
@@ -22,14 +24,11 @@ Brushless DC motors (BLDCs) are a type of motor that commutate without brushes. 
 
 In the image above, the two magnet poles form the stator. The object spinning in the center is called the rotor. The two black boxes on the sides of the rotor's rotating cyan ring represent the stationary brushes, which carry current from the power source into the rotor. As current passes through the rotor's conductor, a magnetic field is generated which interacts with the magnetic field from the stator, driving rotation and producing torque. The issue with this design is that the brushes wear down over time and require maintenance or replacement.
 
-With that context in mind, BLDCs operate *without* brushes. The design of a typical BLDC is the opposite of a brushed DC motor. The rotor is the permanent magnet, while the stator consists of powered coils. 
+With that context in mind, BLDCs operate *without* brushes. The design of a typical BLDC is the opposite of a brushed DC motor. The rotor is the permanent magnet, while the stator consists of powered coils. Currents are sent into the coils in a specific pattern, (depending on the commutation method,) such that the magnetic field in the rotor is always chasing the stators' fields.
 
 ![GIF of a Brushless DC motor's operating principle.](https://www.renesas.com/sites/default/files/inline-images/fig3-a-bldc-monitor-en.gif)
 
 *Brushless DC Motor Operating Principle.* [*Source.*](https://www.renesas.com/en/support/engineer-school/brushless-dc-motor-01-overview)
-
-In a BLDC, currents are sent into the coils in a specific pattern, (depending on the commutation method,) such that the magnetic field in the rotor is always chasing the stators' fields.
-
 
 
 ## What is Field Oriented Control?
