@@ -65,6 +65,8 @@ Because I am using a magnetic encoder, I need a way to mount a magnet to the mot
 
 # Second Design
 
+## PCB Design
+
 # Further Reading
 
 The following resources were extremely helpful in the process of designing my field-oriented controller.
