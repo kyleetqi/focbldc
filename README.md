@@ -30,6 +30,11 @@ With that context in mind, BLDCs operate *without* brushes. The design of a typi
 
 *Brushless DC Motor Operating Principle.* [*Source.*](https://www.renesas.com/en/support/engineer-school/brushless-dc-motor-01-overview)
 
+### Commutation Methods Besides FOC
+
+The simplest way of controlling a BLDC is via trapezoidal commutation.
+
+Another method of controlling a BLDC is sinusoidal commutation.
 
 ## What is Field Oriented Control?
 
