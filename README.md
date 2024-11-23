@@ -18,6 +18,14 @@ Field-oriented control (FOC), also known as vector control, is a method of contr
 
 If this project aims to achieve precise position control, it may not be immediately evident why FOC is necessary. You could use a motor encoder and then send currents into the three phases accordingly using other commutation methods. Indeed, FOC *is not* strictly required for position control of a motor but offers many benefits, especially for applications in gimbals. FOC provides better power efficiency, torque characteristics, and smoother commutation.
 
+### Quadrature and Direct Current
+
+## The Park/Clarke Transform
+
+## Space Vector Pulse Width Modulation
+
+## Cascading Control Loops
+
 ## Block Diagram
 
 ![Block diagram of motor controller](Images/block-diagram.svg)
