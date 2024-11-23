@@ -12,7 +12,7 @@ Please note that until this document is finished, there may be substantial gramm
 
 # High-Level Understanding
 
-I spent an ungodly amount of time researching how FOCs work to distill it down into this concise writing.
+I spent an ungodly amount of time researching how FOCs work to distill it down into this.
 
 ## How do Brushless DC Motors Work?
 
