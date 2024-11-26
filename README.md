@@ -66,14 +66,14 @@ For the first iteration of the design, I thought it would be wise to use breakou
 * Since I wanted to use breakout boards, I needed widely available ICs. 
 * Since the first design is a proof-of-concept, I chose a small hobby gimbal motor so I did not have to worry about making sure my components were rated for high power. 
 * Some 3-phase inverter ICs are specifically made for BLDC operation, and include current sensors in their package. However, for the sake of learning, I decided on separate current sensors and inverters. 
-* For the MCU, I initially wanted to choose an Arduino Nano for its form factor. However, it only has 6 PWM channels, which is only enough to control the motor as the board requires 6 inputs. If I wanted PWM anywhere else in the design, it would not be sufficient. Because of this, I decided to use the ESP32 DEVKIT V1 board because it has 16 pins that support PWM. For the second iteration, I may use the Teensy board which has a whopping 31 PWM channels, but with the tradeoff of being 3x more expensive.
+* For the MCU, I initially wanted to choose an Arduino Nano for its form factor. The 3 phase inverter requires 6 PWM inputs, which exactly matches the amount of PWM outputs the Nano can provide. However, if I wanted PWM anywhere else in the design, it would not be sufficient. Because of this, I decided to use the ESP32 DEVKIT V1 board because it has 16 pins that support PWM. For the second design, I may use the Teensy board which has a whopping 31 PWM channels so I can control multiple motors at a time.
 
 | Description | PN |
 | --- | --- |
 | Magnetic Encoder | [AS5600](https://www.amazon.com/Magnetic-Encoder-Induction-Measurement-Precision/dp/B094F8H591?th=1) |
 | MCU | ESP32 DEVKIT V1 |
 | BLDC | TBD |
-| Power Supply | TBD |
+| Power Supply | [This ACDC converter my dad has lying around (HYPERLINK TBD)[Images/power-supply.png] |
 | Current Sensor | [INA3221](https://www.amazon.com/DAOKAI-INA3221-Channel-Current-Replacement/dp/B0B5D3PVFR/ref=sr_1_2?crid=KPTQXU6AVIML&dib=eyJ2IjoiMSJ9.ROfuRmnt7fyonseZ5LHUXL2l47dBgxdrTOMYApPNdhPdyjwZEU6cm2AWRfzulQoaKRz_KolXH0dgz6UZqttZ7wL75fTOVbobFJQuQjU_TnWBuNShv56PupeN65hO1czEBZp7WDB4j-woHkOQKQtNwc8NBXwqaWbqXfgtErMfGvOoqAifkzuwKvcBpvwJ7_cXCyxPZUcKcO0OYuHajSs0lCFSzxuGfggV1VItRCouimY.7OSrFlWi814gCHG7CSV7sCe8t8Lu424Qw6H9MTYB_6o&dib_tag=se&keywords=INA3221&qid=1731987102&sprefix=ina3221%2Caps%2C105&sr=8-2#customerReviews) |
 | 3-Phase Inverter | [TMC6300](https://www.amazon.com/SparkFun-Brushless-Motor-Driver-Dimensions/dp/B0C9PJWGW4) |
 
@@ -82,6 +82,8 @@ For the first iteration of the design, I thought it would be wise to use breakou
 Because I am using a magnetic encoder, I need a way to mount a magnet to the motor shaft. I designed and 3D printed a bracket using Solidworks. The magnet fits in via a press fit.
 
 ## Schematic
+
+I created a schematic in EasyEDA to plan out the connections.
 
 ## Software
 
