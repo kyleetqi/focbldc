@@ -98,6 +98,7 @@ Because I am using a magnetic encoder, I need a way to mount a magnet to the mot
 The following resources were extremely helpful in the process of designing my field-oriented controller.
 
 [Brushless Motor Control with Simulink](https://www.youtube.com/playlist?list=PLn8PRpmsu08qL-EG3DRMtRyokpXQJyhp7)
+[How to do Space Vector Modulation](https://www.youtube.com/watch?v=oHEVdXucSJs)
 
 # Glossary
 
